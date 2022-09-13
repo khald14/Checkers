@@ -1,0 +1,55 @@
+﻿@page
+@model Q.Pages.Users.Queries.Query7Model
+@{
+    ViewData["Title"] = "Query7";
+}
+
+<h2>Display a table showing players by amount of games, with sorting by the amount in descending order</h2>
+<hr />
+
+@{
+    int i = Model.count.Count - 1;
+    @foreach (var item in Model.count)
+    {
+        <br />
+        <h3>Players Played @i games</h3>
+        <table class="redTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Users[0].Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Users[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Users[0].PhoneNumber)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var user in Model.Users)
+                {
+                    if (user.GamesCount == i)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => user.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => user.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => user.PhoneNumber)
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        i--;
+    }
+}
+
+<br /><p><a asp-page="Index">Back To Queries List</a></p>

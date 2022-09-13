@@ -1,0 +1,42 @@
+﻿@page
+@model Q.Pages.Users.Queries.Query2Model
+@{
+    ViewData["Title"] = "Query2";
+}
+
+<h1>Display all players in descending order by name with the date of the last game</h1>
+<hr />
+
+<table class="redTable">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Users[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].GameStartTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Games.ElementAt(i).GameStartTime)
+                    </td>
+                </tr>
+                i++;
+            }
+        }
+
+    </tbody>
+</table>
+
+<br /><p><a asp-page="Index">Back To Queries List</a></p>

@@ -1,0 +1,64 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Q.Pages.Users.Queries.Query5Model
+@{
+    ViewData["Title"] = "Query5";
+}
+
+<h1>Display each player and how many games he played</h1>
+<hr />
+
+
+<form method="post">
+    <label for="id">Choose an user:</label>
+
+    @Html.DropDownListFor(m => m.user.Id, new SelectList(Model.Users, "Id", "Name"), "Please select")
+
+    <br>
+    <br>
+    <Button type="submit">Send</Button>
+
+</form>
+
+<br>
+
+<table class="redTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].GameStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].GameDurationTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Games)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameDurationTime)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<br /><p><a asp-page="Index">Back To Queries List</a></p>

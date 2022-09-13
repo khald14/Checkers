@@ -1,0 +1,43 @@
+﻿table.topazCells {
+    border: 4px solid #555555;
+    background-color: #555555;
+    width: 400px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+    table.topazCells td, table.topazCells th {
+        border: 1px solid #555555;
+        padding: 4px 7px;
+    }
+
+    table.topazCells tbody td {
+        font-size: 13px;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    table.topazCells tr:nth-child(even) {
+        background: #A43152;
+    }
+
+    table.topazCells td:nth-child(even) {
+        background: #A43152;
+    }
+
+    table.topazCells tfoot td {
+        font-size: 13px;
+    }
+
+    table.topazCells tfoot .links {
+        text-align: right;
+    }
+
+        table.topazCells tfoot .links a {
+            display: inline-block;
+            background: #FFFFFF;
+            color: #A43152;
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+

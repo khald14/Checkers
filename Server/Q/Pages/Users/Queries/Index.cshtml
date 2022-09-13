@@ -1,0 +1,32 @@
+﻿@page
+@model Q.Pages.Users.Queries.IndexModel
+@{
+    ViewData["Title"] = "Queries";
+}
+
+<br />
+<h1>Queries</h1>
+<hr />
+<br />
+
+<div>
+    <ul>
+        <li> <a asp-page="Query1">Display all the players with all the details</a></li>
+
+        <li> <a asp-page="Query2">Display all players in descending order by name with the date of the last game</a></li>
+
+        <li> <a asp-page="Query3">Display games with all details</a></li>
+
+        <li><a asp-page="Query4">Display games without duplicates</a> </li>
+
+        <li><a asp-page="Query5">Display all players and all the games each one played</a> </li>
+
+        <li> <a asp-page="Query6">Display each player and how many games he played</a></li>
+
+        <li><a asp-page="Query7">Display a table showing players by amount of games, with sorting by the amount in descending order</a></li>
+
+    </ul>
+
+    <br />
+    <a href="/">Back to Home Page</a><br />
+</div>

@@ -1,0 +1,49 @@
+﻿@page
+@model Q.Pages.Users.Queries.Query4Model
+
+@{
+    ViewData["Title"] = "Query4";
+}
+
+<h1>Display games without duplicates</h1>
+<hr />
+
+<table class="redTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].GameStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Games[0].GameDurationTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Games)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameDurationTime)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br /><p><a asp-page="Index">Back To Queries List</a></p>

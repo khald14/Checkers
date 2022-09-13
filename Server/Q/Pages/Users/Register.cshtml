@@ -1,0 +1,50 @@
+﻿@page
+@model Q.Pages.Users.RegisterModel
+@{
+}
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<h4>checkers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Users.Id" class="control-label"></label>
+                <input asp-for="Users.Id" class="form-control" />
+                @Html.ValidationMessage("IdError", new { @class = "text-danger" })
+                <span asp-validation-for="Users.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.Name" class="control-label"></label>
+                <input asp-for="Users.Name" class="form-control" />
+                <span asp-validation-for="Users.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users.PhoneNumber" class="control-label"></label>
+                <input asp-for="Users.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Users.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
